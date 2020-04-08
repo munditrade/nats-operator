@@ -1,0 +1,17 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: nats-ca
+spec:
+  secretName: nats-ca
+  duration: 8736h
+  renewBefore: 240h
+  issuerRef:
+    name: selfsigning
+    kind: ClusterIssuer
+  commonName: nats-ca
+  usages: 
+    - cert sign
+  organization:
+  - Mundi Trade Inc.
+  isCA: true
